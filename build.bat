@@ -11,7 +11,7 @@ FOR /R %%f in (*.cpp) do (
 REM echo "Files:" %cppFilenames%
 
 SET assembly=emlua
-SET compilerFlags=-g -Wall -Werror -pedantic
+SET compilerFlags=--std=c++20 -g -Wall -Werror -pedantic
 SEt optimiseFlag=-O3
 REM -Wall -Werror
 SET includeFlags=-Isrc -I%LUA_DIR%/include

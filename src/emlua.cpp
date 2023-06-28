@@ -2,7 +2,7 @@
 #include <string>
 #include <lua.hpp>
 
-int main()
+auto main() -> int
 {
 	std::cout << "[CXX] Starting Lua..." << std::endl;
 	lua_State *L = luaL_newstate();
@@ -25,5 +25,5 @@ int main()
 	}
 
 	lua_close(L);
-	return 0;
+	return EXIT_SUCCESS;
 }
