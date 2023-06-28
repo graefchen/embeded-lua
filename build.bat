@@ -14,8 +14,8 @@ SET assembly=emlua
 SET compilerFlags=-g -Wall -Werror -pedantic
 SEt optimiseFlag=-O3
 REM -Wall -Werror
-SET includeFlags=-Isrc -IC:/Users/Graef/AppData/Local/Lua/include
-SET linkerFlags=-LC:/Users/Graef/AppData/Local/Lua -llua54.lib
+SET includeFlags=-Isrc -I%LUA_DIR%/include
+SET linkerFlags=-L%LUA_DIR% -llua54.lib
 
 ECHO "Building %assembly%..."
 clang %cppFilenames% %compilerFlags% %optimiseFlag% -o ./bin/%assembly%.exe %includeFlags% %linkerFlags%

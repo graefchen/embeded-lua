@@ -3,7 +3,9 @@
 def build [
 	files: list
 ] {
-	clang $files --std=c++20 -Wall -Wextra -pedantic -O3 -Isrc -IC:/Users/Graef/AppData/Local/Lua/include -LC:/Users/Graef/AppData/Local/Lua -llua54.lib -o ./bin/emlua.exe
+	let includeFlags = ([-I, $env.LUA_DIR, /include] | str join)
+	let linkerFlags = ([-L, $env.LUA_DIR] | str join)
+	clang $files --std=c++20 -Wall -Wextra -pedantic -O3 -Isrc $includeFlags $linkerFlags -llua54.lib -o ./bin/emlua.exe
 }
 
 def main [
