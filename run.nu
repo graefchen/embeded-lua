@@ -11,11 +11,9 @@ def build [
 def main [
 	--run (-r) # Runs the executable after compiling
 ] {
-	# The .c flenames that need to be given to the compiler
 	let cppFilenames = (ls **/*.cpp | get name)
 
-	# Printing the filenames to check if they are correct
-	# print $cppFilenames
+	print $cppFilenames
 
 	# Making the directory
 	(mkdir bin)
@@ -24,7 +22,6 @@ def main [
 	build $cppFilenames
 	print "> Finished making the exectable"
 
-	# Executing the lispy file
 	if $run {
 		print "> Running the executable:"
 		.\bin\emlua.exe

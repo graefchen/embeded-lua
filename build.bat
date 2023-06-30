@@ -2,13 +2,13 @@ REM Build script
 @ECHO OFF
 SetLocal EnableDelayedExpansion
 
-REM Get a list of all the .cxx files.
+REM Get a list of all the .cpp files.
 SET cppFilenames=
 FOR /R %%f in (*.cpp) do (
 	SET cppFilenames=!cppFilenames! %%f
 )
 
-REM echo "Files:" %cppFilenames%
+echo "Files:" %cppFilenames%
 
 SET assembly=emlua
 SET compilerFlags=--std=c++20 -g -Wall -Werror -pedantic
