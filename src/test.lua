@@ -3,7 +3,6 @@ print("[LUA] Hello CPP!")
 a = 10 * 20 / 2
 a = math.pow(a, 5)
 
-
 function multiplyer(a , b)
 	print("[LUA] Multiply "..a.." * "..b)
 	return a * b

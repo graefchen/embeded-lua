@@ -2,7 +2,7 @@
 #include <string>
 #include <lua.hpp>
 
-int function_in_lua(lua_State *L)
+auto function_in_lua(lua_State *L) -> int
 {
 	float a = (float)lua_tonumber(L, 1);
 	float b = (float)lua_tonumber(L, 2);
